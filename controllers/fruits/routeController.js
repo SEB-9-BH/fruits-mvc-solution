@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const viewController = require('./viewController.js')
 const dataController = require('./dataController.js')
+const userController = require('./userController.js')
 // add routes
 // Index
-router.get('/', dataController.index, viewController.index);
+router.get('/', userController.auth, dataController.index, viewController.index);
 // New
 router.get('/new', viewController.newView );
 // Delete

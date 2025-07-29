@@ -7,7 +7,12 @@ const jwt = require('jsonwebtoken')
 
 exports.auth = async (req, res, next) => {
   try {
-    const token = req.header('Authorization').replace('Bearer ', '')
+    let token
+    if(req.query.token){
+      token = req.query.token
+    }else {
+      token = req.header('Authorization').replace('Bearer ', '')
+    }
     const data = jwt.verify(token, 'secret')
     const user = await User.findOne({ _id: data._id })
     if (!user) {
@@ -18,18 +23,20 @@ exports.auth = async (req, res, next) => {
   } catch (error) {
     res.status(401).send('Not authorized')
   }
-}
+} // check
 
-exports.createUser = async (req, res) => {
+exports.createUser = async (req, res, next) => {
   try{
     const user = new User(req.body)
     await user.save()
     const token = await user.generateAuthToken()
-    res.json({ user, token })
+    res.locals.data.token = token 
+    req.user = user
+    next()
   } catch(error){
     res.status(400).json({message: error.message})
   }
-}
+}// good but needs to change
 
 exports.loginUser = async (req, res) => {
   try{

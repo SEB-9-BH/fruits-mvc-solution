@@ -1,9 +1,11 @@
 const Fruit = require('../models/fruit.js');
+const User = require('../models/user.js')
 
 const dataController = {}
 dataController.index = async (req,res,next) => {
    try {
-    res.locals.data.fruits = await Fruit.find({})
+    const user = await req.user.populate('fruits')
+    res.locals.data.fruits = user.fruits
     next()
    } catch(error) {
     res.status(400).send({ message: error.message })

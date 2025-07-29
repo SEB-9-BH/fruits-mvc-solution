@@ -1,5 +1,11 @@
 const RESOURCE_PATH = '/fruits'
 const viewController = {
+  signUp(req, res, next){
+    res.render('/auth/SignUp')
+  },
+  signIn(req, res, next){
+    res.render('/auth/SignIn')
+  },
   index(req, res, next){
     res.render('fruits/Index', res.locals.data)
   },
