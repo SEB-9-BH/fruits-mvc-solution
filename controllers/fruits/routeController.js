@@ -2,12 +2,18 @@ const express = require('express');
 const router = express.Router();
 const viewController = require('./viewController.js')
 const dataController = require('./dataController.js')
-const userController = require('./userController.js')
+const authDataController = require('../auth/dataController.js')
 // add routes
 // Index
-router.get('/', userController.auth, dataController.index, viewController.index);
+router.get('/', authDataController.auth
+    /* check if the token exists in the header or the query, set req.user and res.locals.data.token */ , 
+    dataController.index
+    /*grab and save the logged in user's fruits */, 
+    viewController.index
+    /* display the logged in users fruits and also the link to the new page with the token*/
+);
 // New
-router.get('/new', viewController.newView );
+router.get('/new', authDataController.auth, viewController.newView );
 // Delete
 router.delete('/:id', dataController.destroy, viewController.redirectHome);
 // Update

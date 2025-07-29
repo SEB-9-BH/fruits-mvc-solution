@@ -19,6 +19,7 @@ exports.auth = async (req, res, next) => {
       throw new Error()
     }
     req.user = user
+    res.locals.data.token = token
     next()
   } catch (error) {
     res.status(401).send('Not authorized')
@@ -45,7 +46,9 @@ exports.loginUser = async (req, res) => {
       res.status(400).send('Invalid login credentials')
     } else {
       const token = await user.generateAuthToken()
-      res.json({ user, token })
+      res.locals.data.token = token 
+      req.user = user
+      next()
     }
   } catch(error){
     res.status(400).json({message: error.message})
