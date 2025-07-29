@@ -3,18 +3,32 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "jest",
+    "dev":"nodemon",
+    "start": "node server.js",
+    "load": "artillery run artillery.yml"
+  },
+  "jest":{
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
     "jsx-view-engine": "^1.0.0",
     "method-override": "^3.0.0",
-    "mongoose": "^8.16.4"
+    "mongoose": "^8.16.4",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "artillery": "^1.7.9",
+    "jest": "^30.0.5",
+    "mongodb-memory-server": "^10.1.4",
+    "supertest": "^7.1.4"
   }
 }
