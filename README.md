@@ -288,7 +288,7 @@ tests/
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone <YOUR-FORKED-repository-url>
 cd fruits
 
 # Install dependencies
