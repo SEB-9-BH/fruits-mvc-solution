@@ -60,7 +60,9 @@ fruits/
 ├── routes/
 │   └── apiRoutes.js      # API router for /api endpoints
 ├── views/
+│   └── auth/             # JSX view templates
 │   └── fruits/           # JSX view templates
+│   └── layouts/          # JSX view templates
 ├── tests/                # Jest test files
 └── public/               # Static files
 ```
@@ -79,28 +81,28 @@ Our application supports JWT authentication in two ways:
 ### Authentication Flow
 
 ```
-┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│   Client    │    │   Routes    │    │   Auth      │    │   Database  │
-│             │    │             │    │  Middleware │    │             │
-└─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
+┌─────────────┐     ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+│   Client    │     │   Routes    │     │   Auth      │     │   Database  │
+│             │     │             │     │  Middleware │     │             │
+└─────────────┘     └─────────────┘     └─────────────┘     └─────────────┘
        │                   │                   │                   │
-       │ 1. Request with  │                   │                   │
-       │    token         │                   │                   │
-       │─────────────────▶│                   │                   │
-       │                   │ 2. Pass to auth  │                   │
-       │                   │    middleware    │                   │
-       │                   │─────────────────▶│                   │
-       │                   │                   │ 3. Verify token  │
-       │                   │                   │    & find user   │
-       │                   │                   │─────────────────▶│
-       │                   │                   │ 4. Return user   │
-       │                   │                   │◀─────────────────│
-       │                   │ 5. Add user to   │                   │
-       │                   │    req.user      │                   │
-       │                   │◀─────────────────│                   │
+       │ 1. Request with   │                   │                   │
+       │    token          │                   │                   │
+       │─-────────────────▶│                   │                   │
+       │                   │ 2. Pass to auth   │                   │
+       │                   │    middleware     │                   │
+       │                   │──────────────────▶│                   │
+       │                   │                   │ 3. Verify token   │
+       │                   │                   │    & find user    │
+       │                   │                   │──────────────────▶│
+       │                   │                   │ 4. Return user    │
+       │                   │                   │◀──────────────────│
+       │                   │ 5. Add user to    │                   │
+       │                   │    req.user       │                   │
+       │                   │◀──────────────────│                   │
        │ 6. Continue to    │                   │                   │
        │    controller     │                   │                   │
-       │◀─────────────────│                   │                   │
+       │◀──────────────────│                   │                   │
 ```
 
 ### Token Generation
