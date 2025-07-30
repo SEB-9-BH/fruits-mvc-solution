@@ -1,5 +1,4 @@
-const Fruit = require('../models/fruit.js');
-const User = require('../models/user.js')
+const Fruit = require('../../models/fruit.js')
 
 const dataController = {}
 dataController.index = async (req,res,next) => {
@@ -44,6 +43,8 @@ dataController.create = async (req, res, next) => {
     }
     try {
       res.locals.data.fruit = await Fruit.create(req.body)
+      req.user.fruits.addToSet({_id: res.locals.data.fruit._id })
+      await req.user.save()
       next()
     } catch (error) {
       res.status(400).send({ message: error.message })

@@ -1,22 +1,50 @@
 const React = require('react')
-/*
-const userSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  password: String
-})
-*/
+const Layout = require('../layouts/Layout')
 
 function SignIn (props) {
     return(
-        <div>
-            <h1>Log In For The Greatest Of All Time</h1>
+        <Layout>
+            <h1>🔐 Sign In</h1>
+            
+            <h2 className="text-center mb-3">Welcome Back!</h2>
+            
             <form action="/users/login" method="POST">
-                Email: <input type="email" name="email" /><br/>
-                Password: <input type="password" name="password" /><br/>
-                <input type="submit" value="Submit to Login" />
+                <div className="form-group">
+                    <label htmlFor="email">Email:</label>
+                    <input 
+                        type="email" 
+                        id="email"
+                        name="email" 
+                        placeholder="Enter your email..."
+                        required 
+                    />
+                </div>
+                
+                <div className="form-group">
+                    <label htmlFor="password">Password:</label>
+                    <input 
+                        type="password" 
+                        id="password"
+                        name="password" 
+                        placeholder="Enter your password..."
+                        required 
+                    />
+                </div>
+                
+                <div className="d-flex gap-2">
+                    <button type="submit" className="btn btn-primary">
+                        🔐 Sign In
+                    </button>
+                    <a href="/users/signup" className="btn btn-secondary">
+                        📝 Create Account
+                    </a>
+                </div>
             </form>
-        </div>
+            
+            <div className="text-center mt-3">
+                <p>Don't have an account? <a href="/users/signup">Sign up here</a></p>
+            </div>
+        </Layout>
     )
 }
 

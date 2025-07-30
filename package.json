@@ -4,7 +4,9 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
-    "dev":"nodemon",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "dev": "nodemon",
     "start": "node server.js",
     "load": "artillery run artillery.yml"
   },

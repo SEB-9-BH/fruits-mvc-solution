@@ -9,6 +9,13 @@ const userSchema = new mongoose.Schema({
   fruits: [{ type: mongoose.Schema.Types.ObjectId, ref:'Fruit'}]
 })
 
+// Hide password from JSON responses
+userSchema.methods.toJSON = function() {
+  const user = this.toObject()
+  delete user.password
+  return user
+}
+
 userSchema.pre('save', async function(next) {
   if (this.isModified('password')) {
     this.password = await bcrypt.hash(this.password, 8)

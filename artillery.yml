@@ -4,10 +4,40 @@ config:
     - duration: 60
       arrivalRate: 20
 scenarios:
-  - flow:
+  - name: "User Registration"
+    flow:
       - post:
-          url: "/users"
+          url: "/api/users"
           json:
-            name: "Test"
+            name: "Test User"
             email: "test@example.com"
             password: "Password123"
+          capture:
+            - json: "$.token"
+              as: "authToken"
+  
+  - name: "User Login"
+    flow:
+      - post:
+          url: "/api/users/login"
+          json:
+            email: "test@example.com"
+            password: "Password123"
+          capture:
+            - json: "$.token"
+              as: "authToken"
+  
+  - name: "Protected API Calls"
+    flow:
+      - get:
+          url: "/api/fruits"
+          headers:
+            Authorization: "Bearer {{authToken}}"
+      - post:
+          url: "/api/fruits"
+          headers:
+            Authorization: "Bearer {{authToken}}"
+          json:
+            name: "Test Fruit"
+            color: "Red"
+            readyToEat: true

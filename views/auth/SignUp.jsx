@@ -1,23 +1,61 @@
 const React = require('react')
-/*
-const userSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  password: String
-})
-*/
+const Layout = require('../layouts/Layout')
 
 function SignUp (props) {
     return(
-        <div>
-            <h1>Sign Up For The Greatest Of All Time</h1>
+        <Layout>
+            <h1>📝 Sign Up</h1>
+            
+            <h2 className="text-center mb-3">Join The Greatest Of All Time!</h2>
+            
             <form action="/users" method="POST">
-                Name: <input type="text" name="name" /><br/>
-                Email: <input type="email" name="email" /><br/>
-                Password: <input type="password" name="password" /><br/>
-                <input type="submit" value="Submit to Register" />
+                <div className="form-group">
+                    <label htmlFor="name">Full Name:</label>
+                    <input 
+                        type="text" 
+                        id="name"
+                        name="name" 
+                        placeholder="Enter your full name..."
+                        required 
+                    />
+                </div>
+                
+                <div className="form-group">
+                    <label htmlFor="email">Email:</label>
+                    <input 
+                        type="email" 
+                        id="email"
+                        name="email" 
+                        placeholder="Enter your email..."
+                        required 
+                    />
+                </div>
+                
+                <div className="form-group">
+                    <label htmlFor="password">Password:</label>
+                    <input 
+                        type="password" 
+                        id="password"
+                        name="password" 
+                        placeholder="Enter your password..."
+                        required 
+                    />
+                </div>
+                
+                <div className="d-flex gap-2">
+                    <button type="submit" className="btn btn-primary">
+                        📝 Create Account
+                    </button>
+                    <a href="/users/signin" className="btn btn-secondary">
+                        🔐 Sign In Instead
+                    </a>
+                </div>
             </form>
-        </div>
+            
+            <div className="text-center mt-3">
+                <p>Already have an account? <a href="/users/signin">Sign in here</a></p>
+            </div>
+        </Layout>
     )
 }
 

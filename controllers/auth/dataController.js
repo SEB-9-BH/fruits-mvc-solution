@@ -1,4 +1,4 @@
-const User = require('../models/user')
+const User = require('../../models/user')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
@@ -10,8 +10,10 @@ exports.auth = async (req, res, next) => {
     let token
     if(req.query.token){
       token = req.query.token
-    }else {
+    }else if(req.header('Authorization')){
       token = req.header('Authorization').replace('Bearer ', '')
+    }else {
+      throw new Error('No token provided')
     }
     const data = jwt.verify(token, 'secret')
     const user = await User.findOne({ _id: data._id })
@@ -39,7 +41,7 @@ exports.createUser = async (req, res, next) => {
   }
 }// good but needs to change
 
-exports.loginUser = async (req, res) => {
+exports.loginUser = async (req, res, next) => {
   try{
     const user = await User.findOne({ email: req.body.email })
     if (!user || !await bcrypt.compare(req.body.password, user.password)) {

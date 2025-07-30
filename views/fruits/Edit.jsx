@@ -6,13 +6,61 @@ function Edit (props) {
 
     return(
         <Layout fruit={props.fruit}>
-            <h1>{name} Edit Page</h1>
-            <a href='/fruits'>Go back to Index Page</a>
-            <form action={`/fruits/${_id}?_method=PUT`} method="POST">
-                Name: <input type="text" name="name" defaultValue={name} /><br/>
-                Color: <input type="text" name="color" defaultValue={color}/><br/>
-                Is Ready To Eat: {readyToEat? <input type="checkbox" name="readyToEat" defaultChecked />: <input type='checkbox' name="readyToEat"/>}<br/>
-                <input type="submit" value="Update Fruit" />
+            <h1>✏️ Edit {name}</h1>
+            
+            <form action={`/fruits/${_id}?_method=PUT&token=${props.token}`} method="POST">
+                <div className="form-group">
+                    <label htmlFor="name">Fruit Name:</label>
+                    <input 
+                        type="text" 
+                        id="name"
+                        name="name" 
+                        defaultValue={name}
+                        placeholder="Enter fruit name..."
+                        required 
+                    />
+                </div>
+                
+                <div className="form-group">
+                    <label htmlFor="color">Color:</label>
+                    <input 
+                        type="text" 
+                        id="color"
+                        name="color" 
+                        defaultValue={color}
+                        placeholder="Enter fruit color..."
+                        required 
+                    />
+                </div>
+                
+                <div className="form-group">
+                    <label htmlFor="readyToEat">
+                        {readyToEat ? (
+                            <input 
+                                type="checkbox" 
+                                id="readyToEat"
+                                name="readyToEat" 
+                                defaultChecked 
+                            />
+                        ) : (
+                            <input 
+                                type="checkbox" 
+                                id="readyToEat"
+                                name="readyToEat" 
+                            />
+                        )}
+                        Ready to Eat
+                    </label>
+                </div>
+                
+                <div className="d-flex gap-2">
+                    <button type="submit" className="btn btn-primary">
+                        💾 Update Fruit
+                    </button>
+                    <a href={`/fruits/${_id}?token=${props.token}`} className="btn btn-secondary">
+                        ← Back to {name}
+                    </a>
+                </div>
             </form>
         </Layout>
     )
