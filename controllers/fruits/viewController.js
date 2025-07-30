@@ -26,7 +26,11 @@ const viewController = {
     } 
   },
   redirectShow(req, res, next){
-    res.redirect(RESOURCE_PATH + `/${req.params.id}`)
+     if(res.locals.data.token){
+      res.redirect(`${RESOURCE_PATH}/${req.params.id}?token=${res.locals.data.token}`)
+    }else {
+      res.redirect(`${RESOURCE_PATH}/${req.params.id}`)
+    } 
   }
 }
 
