@@ -26,11 +26,17 @@ For your Unit 2 project, you will create a full-stack web application using Expr
 | **API Endpoints** | RESTful API with JSON responses | +10 |
 | **Load Testing** | Artillery configuration and performance testing | +5 |
 | **Advanced Features** | File uploads, search, filtering, etc. | +5 |
-| **Deployment** | Live application on Heroku/Railway/etc. | +5 |
+| **Deployment** | Live application on Heroku/Railway/Digital Ocean/AWS/Azure etc. | +5 |
 
 ---
 
 ## 🏗️ Technical Requirements
+
+### **Planning Requirements**
+- ✅ Trello Board
+- ✅ Read Me
+- ✅ Route Table (instead of wireframes)
+- ✅ Optional Wireframes 
 
 ### **Backend Requirements**
 - ✅ Express.js server with proper routing
@@ -322,10 +328,10 @@ Your project will be considered successful if:
 
 ## 📞 Getting Help
 
-- **Office Hours**: Attend instructor office hours
+- **Office Hours**: Attend class Arthur will be in the classroom all day except for 11:30 - 1pm Daily
 - **Peer Review**: Work with classmates for feedback
 - **Documentation**: Read Express.js and Mongoose docs
-- **Stack Overflow**: Search for specific technical issues
+- **Stack Overflow & AI**: Search for specific technical issues, but don't copy answers or ask it to do work for you
 - **GitHub**: Look at similar projects for inspiration
 
 ---
