@@ -15,7 +15,7 @@ router.get('/', authDataController.auth
 // New
 router.get('/new', authDataController.auth, viewController.newView );
 // Delete
-router.delete('/:id', dataController.destroy, viewController.redirectHome);
+router.delete('/:id',authDataController.auth, dataController.destroy, viewController.redirectHome);
 // Update
 router.put('/:id',authDataController.auth, dataController.update, viewController.redirectShow);
 // Create
