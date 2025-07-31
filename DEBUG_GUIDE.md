@@ -18,7 +18,7 @@
 
 #### **Common Causes:**
 - **File not found**: `Cannot find module './controllers/fruits/dataController'`
-- **Wrong file extension**: `Cannot find module './models/user'` (missing .js)
+- **Wrong file extension**: `Cannot find module './models/user.cs'` (missing .js instead of cs)
 - **Case sensitivity**: `Cannot find module './Models/User'` (should be `./models/user`)
 - **Path typos**: `Cannot find module './controlers/fruits'` (should be `controllers`)
 
