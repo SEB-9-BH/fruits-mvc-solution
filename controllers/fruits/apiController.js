@@ -17,11 +17,6 @@ const apiController = {
     res.status(201).json(res.locals.data.fruit)
   },
 
-  // Update fruit
-  update(req, res) {
-    res.json(res.locals.data.fruit)
-  },
-
   // Delete fruit
   destroy(req, res) {
     res.status(200).json({ message: 'Fruit successfully deleted' })

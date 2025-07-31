@@ -3,7 +3,6 @@ const router = express.Router()
 const userApiController = require('../controllers/auth/apiController')
 const fruitApiController = require('../controllers/fruits/apiController')
 const fruitDataController = require('../controllers/fruits/dataController')
-const userDataController = require('../controllers/auth/dataController')
 
 // User API Routes
 router.post('/users', userApiController.createUser)
@@ -16,7 +15,7 @@ router.delete('/users/:id', userApiController.auth, userApiController.deleteUser
 router.get('/fruits', userApiController.auth, fruitDataController.index, fruitApiController.index)
 router.get('/fruits/:id', userApiController.auth, fruitDataController.show, fruitApiController.show)
 router.post('/fruits', userApiController.auth, fruitDataController.create, fruitApiController.create)
-router.put('/fruits/:id', userApiController.auth, fruitDataController.update, fruitApiController.update)
+router.put('/fruits/:id', userApiController.auth, fruitDataController.update, fruitApiController.show)
 router.delete('/fruits/:id', userApiController.auth, fruitDataController.destroy, fruitApiController.destroy)
 
 module.exports = router 

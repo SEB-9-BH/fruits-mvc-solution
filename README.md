@@ -1,8 +1,30 @@
 # Fruits API - MVC Architecture with JWT Authentication
 
-## Overview
+## 📚 Documentation Overview
 
 This project demonstrates a complete RESTful API built with Express.js and MongoDB, following the Model-View-Controller (MVC) architecture pattern. The application includes both web views and API endpoints, with JWT authentication supporting both query parameters (for web views) and headers (for API calls).
+
+### 📖 **Complete Documentation Suite**
+
+This repository includes comprehensive documentation for learning and implementation:
+
+- **[📋 PROJECT.md](PROJECT.md)** - Unit 2 Project requirements, rubric, and examples
+- **[🏗️ ROUTE_ARCHITECTURE.md](ROUTE_ARCHITECTURE.md)** - Complete route breakdown and application flow
+- **[🧪 TEST_BREAKDOWN.md](TEST_BREAKDOWN.md)** - Function-by-function test analysis
+- **[🔧 CONTROLLER_GUIDE.md](CONTROLLER_GUIDE.md)** - Line-by-line controller explanations with blog examples
+- **[🚀 BLOG_APP_STARTER.md](BLOG_APP_STARTER.md)** - Step-by-step guide for building a blog application
+- **[📝 IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)** - Complete implementation overview
+
+### 🎯 **Quick Navigation**
+
+| Document | Purpose | Best For |
+|----------|---------|----------|
+| **[PROJECT.md](PROJECT.md)** | Project requirements and grading rubric | Students starting Unit 2 |
+| **[ROUTE_ARCHITECTURE.md](ROUTE_ARCHITECTURE.md)** | All routes and application flow | Understanding the codebase |
+| **[TEST_BREAKDOWN.md](TEST_BREAKDOWN.md)** | Detailed test analysis | Learning testing patterns |
+| **[CONTROLLER_GUIDE.md](CONTROLLER_GUIDE.md)** | Controller function explanations | Deep code understanding |
+| **[BLOG_APP_STARTER.md](BLOG_APP_STARTER.md)** | Complete blog app guide | Building similar applications |
+| **[IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)** | Implementation overview | Quick reference |
 
 ---
 
@@ -36,7 +58,7 @@ MVC (Model-View-Controller) is a software design pattern that separates an appli
                        └─────────────────┘
 ```
 
-### File Structure
+### 📁 File Structure
 
 ```
 fruits/
@@ -66,6 +88,12 @@ fruits/
 ├── tests/                # Jest test files
 └── public/               # Static files
 ```
+
+### 🔍 **Deep Dive: Architecture Details**
+
+For a complete breakdown of how routes, controllers, and models work together, see:
+- **[🏗️ ROUTE_ARCHITECTURE.md](ROUTE_ARCHITECTURE.md)** - Detailed route analysis and application flow
+- **[🔧 CONTROLLER_GUIDE.md](CONTROLLER_GUIDE.md)** - Line-by-line controller function explanations
 
 ---
 
@@ -100,9 +128,9 @@ Our application supports JWT authentication in two ways:
        │                   │ 5. Add user to    │                   │
        │                   │    req.user       │                   │
        │                   │◀──────────────────│                   │
-       │ 6. Continue to    │                   │                   │
-       │    controller     │                   │                   │
-       │◀──────────────────│                   │                   │
+       │ 6. Continue to    │                   │
+       │    controller     │                   │
+       │◀──────────────────│                   │
 ```
 
 ### Token Generation
@@ -142,6 +170,12 @@ exports.auth = async (req, res, next) => {
 }
 ```
 
+### 🔍 **Deep Dive: Authentication Details**
+
+For detailed authentication analysis and implementation patterns, see:
+- **[🔧 CONTROLLER_GUIDE.md](CONTROLLER_GUIDE.md)** - Authentication middleware breakdown
+- **[🏗️ ROUTE_ARCHITECTURE.md](ROUTE_ARCHITECTURE.md)** - How authentication integrates with routes
+
 ---
 
 ## 🚀 API Endpoints
@@ -178,6 +212,12 @@ exports.auth = async (req, res, next) => {
 | PUT | `/fruits/:id` | Update fruit | Yes |
 | DELETE | `/fruits/:id` | Delete fruit | Yes |
 
+### 🔍 **Deep Dive: Route Analysis**
+
+For complete route breakdowns, function analysis, and user stories, see:
+- **[🏗️ ROUTE_ARCHITECTURE.md](ROUTE_ARCHITECTURE.md)** - Complete route analysis with user stories
+- **[🔧 CONTROLLER_GUIDE.md](CONTROLLER_GUIDE.md)** - Controller function implementations
+
 ---
 
 ## 🧪 Testing
@@ -202,6 +242,12 @@ tests/
 ├── fruit.test.js         # Fruit API tests
 └── integration.test.js   # Integration tests
 ```
+
+### 🔍 **Deep Dive: Test Analysis**
+
+For comprehensive test breakdowns and analysis, see:
+- **[🧪 TEST_BREAKDOWN.md](TEST_BREAKDOWN.md)** - Function-by-function test analysis with data flow diagrams
+- **[🔧 CONTROLLER_GUIDE.md](CONTROLLER_GUIDE.md)** - Controller functions that are being tested
 
 ---
 
@@ -276,6 +322,12 @@ tests/
        │◀──────────────────│                   │                   │
 ```
 
+### 🔍 **Deep Dive: Implementation Details**
+
+For complete implementation analysis and patterns, see:
+- **[📝 IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)** - Complete implementation overview
+- **[🏗️ ROUTE_ARCHITECTURE.md](ROUTE_ARCHITECTURE.md)** - Detailed application flow analysis
+
 ---
 
 ## 🛠️ Installation & Setup
@@ -346,6 +398,12 @@ JWT_SECRET=your-secret-key
 - **Error Handling**: Proper error responses
 - **Database Design**: MongoDB with Mongoose ODM
 
+### 🎯 **Project 2 Requirements**
+
+For complete Unit 2 project requirements and examples, see:
+- **[📋 PROJECT.md](PROJECT.md)** - Project requirements, rubric, and example applications
+- **[🚀 BLOG_APP_STARTER.md](BLOG_APP_STARTER.md)** - Step-by-step guide for building similar applications
+
 ---
 
 ## 🔧 Development Commands
@@ -367,6 +425,14 @@ npm run load
 npm run test:coverage
 ```
 
+### 📖 **Documentation Navigation**
+
+| Command | Purpose | Related Documentation |
+|---------|---------|----------------------|
+| `npm run dev` | Start development server | **[📝 IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)** |
+| `npm test` | Run test suite | **[🧪 TEST_BREAKDOWN.md](TEST_BREAKDOWN.md)** |
+| `npm run load` | Load testing | **[📝 IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)** |
+
 ---
 
 ## 📝 Contributing
@@ -377,6 +443,25 @@ npm run test:coverage
 4. Add tests for new functionality
 5. Ensure all tests pass
 6. Submit a pull request
+
+---
+
+## 🎓 **Educational Resources**
+
+### **For Students**
+- **[📋 PROJECT.md](PROJECT.md)** - Start here for Unit 2 project requirements
+- **[🚀 BLOG_APP_STARTER.md](BLOG_APP_STARTER.md)** - Complete step-by-step guide
+- **[🔧 CONTROLLER_GUIDE.md](CONTROLLER_GUIDE.md)** - Deep dive into controller functions
+
+### **For Instructors**
+- **[🧪 TEST_BREAKDOWN.md](TEST_BREAKDOWN.md)** - Comprehensive test analysis
+- **[🏗️ ROUTE_ARCHITECTURE.md](ROUTE_ARCHITECTURE.md)** - Complete application architecture
+- **[📝 IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)** - Implementation overview
+
+### **For Developers**
+- **[🔧 CONTROLLER_GUIDE.md](CONTROLLER_GUIDE.md)** - Line-by-line code explanations
+- **[🏗️ ROUTE_ARCHITECTURE.md](ROUTE_ARCHITECTURE.md)** - Route and flow analysis
+- **[🧪 TEST_BREAKDOWN.md](TEST_BREAKDOWN.md)** - Testing patterns and examples
 
 ---
 
