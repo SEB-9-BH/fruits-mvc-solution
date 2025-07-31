@@ -3,13 +3,13 @@
 <img width="871" height="423" alt="mvc" src="https://github.com/user-attachments/assets/0aa4a63f-ecc8-4872-83cb-28da34501cf5" />
 
 ## Arthur:
-- Abdulla Mahmood Alshaikh
-- Abdulrazaq Mohammed Abdulrazaq Mohammed Hassan
-- Ahmed Mohammed Al-shaikh
-- Ali Jawad Ali Ahmed Husain
+- Abdulla Mahmood Alshaikh (approved)
+- Abdulrazaq Mohammed Abdulrazaq Mohammed Hassan (approved)
+- Ahmed Mohammed Al-shaikh (approved)
+- Ali Jawad Ali Ahmed Husain (approved)
 - Alia Burashed
-- Aqeel Moslem Ismaeel Mohamed Nase
-- Ayah Ali Mohammed Aljabboori
+- Aqeel Moslem Ismaeel Mohamed Nase (approved)
+- Ayah Ali Mohammed Aljabboori (approved)
 ## Kristina:
 - Fatema Alzaki
 - Fatima Faisal Taher Mohamed Ahmed Alkuwaiti
