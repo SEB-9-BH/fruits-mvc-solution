@@ -10,7 +10,7 @@
     "start": "node server.js",
     "load": "artillery run artillery.yml"
   },
-  "jest":{
+  "jest": {
     "testEnvironment": "node"
   },
   "keywords": [],
@@ -19,8 +19,10 @@
   "description": "",
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "cloudinary": "^2.7.0",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
+    "express-fileupload": "^1.5.2",
     "jsonwebtoken": "^9.0.2",
     "jsx-view-engine": "^1.0.0",
     "method-override": "^3.0.0",
