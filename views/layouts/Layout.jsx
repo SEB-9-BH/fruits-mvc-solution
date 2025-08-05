@@ -10,7 +10,9 @@ function Layout(props){
         </head>
         <body>
             <div className="container">
+                <nav></nav>
                 {props.children}
+                <footer></footer>
             </div>
         </body>
     </html>
